@@ -1,22 +1,33 @@
 // feetToMile Converter
 function feetToMile(feet){
-var mile= feet/5280;
-return mile;
+    if(feet>0){
+        var mile= feet/5280;
+        return mile;
+    }
+    else{
+    var mile=("warning!! Miles can not be negative.");
+    return mile;
+    }
 }
-var total=feetToMile(12865);
+var result=feetToMile(12865);
+console.log(result,"miles");
 
-var result=Math.round(total);
-console.log(result, "Miles");
 
 
 
 // woodCalculator
 function woodCalculator(chair,table,bed){
-var wood=chair*1+table*3+bed*5;
-return wood;
+    if(chair>0 && table>0 && bed>0){
+        var wood=chair*1+table*3+bed*5;
+        return wood;
+     }
+     else{
+        var wood=("warning!! Wood amount can not be negative.");
+        return wood;
+     }
 }
 var result=woodCalculator(4,2,1);
-console.log("The wood amount is -",result);
+console.log("The wood amount is : ",result);
 
 
 
@@ -39,7 +50,7 @@ function brickCalculator(floor){
     }
 }
 var result=brickCalculator(13);
-console.log("The bricks amount is -",result, "pieces");
+console.log("The bricks amount is : ",result, "pieces");
 
 
 
@@ -50,11 +61,16 @@ function tinyFriend(friends){
     var minSize=tiny.length;
     for(i=0; i < friends.length; i++){
         var element=friends[i];
-        if(element.length<minSize){
-            tiny=element;  
+        if(element.length==""){
+              tiny="Sorry! You can't make me fool. You are a white space.";
         }
+        else{
+            if(element.length<minSize){
+                tiny=element;  
+            }
+        }   
     }
     return tiny;
 }
-var result=tinyFriend(["abuli","rakib","taha", "kashem"]);
-console.log("My tiny friend is -",result);
+var result=tinyFriend(["tanvir", "sony","mim"]);
+console.log("My tiny friend is : ",result);
